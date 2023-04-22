@@ -4,15 +4,17 @@ import styles from './Button.module.scss'
 interface Props {
   type?: "button" | "submit" | "reset" | undefined,
   children?: React.ReactNode,
-  onClick?: () => void
+  onClick?: () => void,
+  disabled?: boolean
 }
 
-function Button({onClick, type, children}: Props){
+function Button({onClick, type, children, disabled}: Props){
   return (
     <button
       onClick={onClick}
       type={type}
       className={styles.button}
+      disabled={disabled}
     >
       {children}
     </button>
